@@ -20,12 +20,16 @@ const getStops = (route, direction) => {
     {
       url: `http://ctabustracker.com/bustime/api/v2/${unique}?key=ySBXDn8J2axRZgjHsVfp3CquD&rt=${args}`,
       success: (data) => {
-        console.log(data['bustime-response'].stops[0].stpnm);
+        console.log(data['bustime-response'].stops[0]);
         const length = data['bustime-response'].stops.length
         // console.log(Object.keys(data));
         for(let i = 0; i < length; i++) {
           const stopName = data['bustime-response'].stops[i].stpnm
-          $card = $(`<div class='card'><h3>Name: ${stopName}</h3</div>`)
+          const stopId = data['bustime-response'].stops[i].stpid
+          const $card = $(`<div class='card'>`)
+          const $nameH3 = $(`<h3>Stop Name: ${stopName}</h3></div>`)
+          const $idH3 = $(`<h3>Stop Id: ${stopId}</h3></div>`)
+          $card.append($nameH3).append($idH3)
           $('.stops').append($card)
         }
 
