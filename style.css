@@ -1,6 +1,6 @@
 * {box-sizing: border-box;}
 
-.stops {
+.stops-query {
   display: flex;
   justify-content: flex-start;
   margin: 0 10px;
