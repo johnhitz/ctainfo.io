@@ -1,4 +1,3 @@
-console.log($);
 $(() => {
   $('.button').on('click', (event) => {
     const unique = "getstops"
@@ -10,9 +9,7 @@ $(() => {
       {
         url: `http://ctabustracker.com/bustime/api/v2/${unique}?key=ySBXDn8J2axRZgjHsVfp3CquD&rt=${args}`,
         success: (data) => {
-          console.log(data['bustime-response'].stops[0]);
           const length = data['bustime-response'].stops.length
-          // console.log(Object.keys(data));
           for(let i = 0; i < length; i++) {
             const stopName = data['bustime-response'].stops[i].stpnm
             const stopId = data['bustime-response'].stops[i].stpid
