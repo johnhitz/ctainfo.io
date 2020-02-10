@@ -3,6 +3,23 @@ $(() => {
   const url = 'http://ctabustracker.com/bustime/api/v2/'
   // API key
   const key = 'ySBXDn8J2axRZgjHsVfp3CquD'
+
+  //////////////////////////////////////////
+  // Routes: unique = getroutes, parameters = format
+  $('.button').on('click', (event) => {
+    event.preventDefault()
+    const unique = `getroutes`
+    const args = `&format=json`
+    console.log(url + `${unique}?key=${key}&rt=${args}`);
+    $.ajax(
+      {
+        url: url + `${unique}?key=${key}&rt=${args}`,
+        success: (data) => {
+          console.log(data);
+        }
+      }
+    )
+  })
   //////////////////////////////////////////
   // Routes: unique = getstops,
   // args = `&rt=${route}&dir=${direction}&format=json`
@@ -12,6 +29,7 @@ $(() => {
   // [name,stop id, longitude, latitude, ...] for all
   // stops on the given route
   $('.button').on('click', (event) => {
+    event.preventDefault()
     const unique = "getstops"
     const bustimeResponse = 'bustime-response'
     let route = $('input[id="route-input"]').val()
@@ -20,13 +38,13 @@ $(() => {
 
     //clear fields
     route = $('input[id="route-input"]').val("")
-direction = $('input[id="direction-input"]').val("")
+    direction = $('input[id="direction-input"]').val("")
     $.ajax(
       {
         url: url + `${unique}?key=${key}&rt=${args}`,
         success: (data) => {
           const length = data['bustime-response'].stops.length
-          console.log(data['bustime-response'].stops[0]);
+          // console.log(data['bustime-response'].stops[0]);
           for(let i = 0; i < length; i++) {
             const stopName = data['bustime-response'].stops[i].stpnm
             const stopId = data['bustime-response'].stops[i].stpid
@@ -41,8 +59,7 @@ direction = $('input[id="direction-input"]').val("")
     )
   })
 
-  //////////////////////////////////////////
-  // Routes: unique = getroutes, args = null
+
   //////////////////////////////////////////
   // Directions: unique = getdirections ,
   // args = &rt=${route}&stpid=${stopId}&format=json
