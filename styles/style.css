@@ -45,8 +45,13 @@ a:hover {
 
 .title {
   font-family: 'Baskerville', serif;
+  font-size: 4rem;
   font-style: italic;
-  line-height: .8;
+  line-height: .1;
+}
+
+h3 {
+  /* line-height: .5px; */
 }
 
 /* ======= Routes ======= */
