@@ -2,6 +2,20 @@
 * {box-sizing: border-box;}
 
 /* ======= Body ======= */
+body {
+  border: 1px solid gold;
+  text-align: center;
+  width: 100vw;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
 h1 {
   text-align: center;
 }
@@ -11,9 +25,9 @@ h1 {
 }
 
 .hidden {
-  visibility: hidden;
-  height: 0;
+  display: none;
 }
+
 
 /* ======= Header and Nav ======= */
 header {
@@ -55,15 +69,12 @@ h3 {
 }
 
 /* ======= Routes ======= */
-/* Background color are added to cards in js for-loop */
 .routes-section input {
-  margin: 0 64%;
+  display: flex;
+  flex-direction: column;
 }
 
 .routes {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
   margin: 0 auto;
 }
 
@@ -86,7 +97,6 @@ h3 {
 }
 
 .card {
-  margin 10px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width: 48%;
