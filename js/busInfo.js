@@ -18,6 +18,26 @@ $(() => {
         success: (data) => {
           event.preventDefault()
           let length = data['bustime-response'].routes.length
+          $hideBtn = $('<input type="button" id="routes" class="button routes hide-routes" name="" value="Toggle Routes">')
+          // console.log($hideBtn);
+          $('#routes').after($hideBtn)
+          $('#routes').remove()
+          console.log($hideBtn);
+          $hideBtn.on('click', (event) => {
+            event.preventDefault()
+            if($('div.routes').hasClass('hidden') === false) {
+              // Why can't I do:
+              // $hideBtn.text('Hide Button')
+              $('div.routes').addClass('hidden')
+            } else {
+              $('div.routes').removeClass('hidden')
+              // and
+              // $hideBtn.text('Show Button')
+              // in my if statement?
+            }
+          })
+
+
           for(let i = 0; i < length; i++) {
             const $rtnm = data['bustime-response'].routes[i].rtnm
             const $rt = data['bustime-response'].routes[i].rt
@@ -59,9 +79,15 @@ $(() => {
           success: (data) => {
             event.preventDefault()
             const length = data['bustime-response'].stops.length
-            $stopsFilter = $('<div class="stops-query">')
+            // $stopsFilter = $('<div class="stops-query">')
             // $filterButton = $('<input type="text" id="stop-filter" name="" value="" placeholder="Enter a Route">')
-
+            // $div = $('<div>').css({'background-color': 'red', 'height': '2px', 'width': '2px'})
+            // console.log($div);
+            // $('.stops-query').after($div);
+            // $('.stops-query').css('background', 'red')
+            // $('.stops-query').append($div)
+            // Able to change background color but not add append div with after() or append()
+            // ???????????????????????????????
             for(let i = 0; i < length; i++) {
               const stopName = data['bustime-response'].stops[i].stpnm
               const stopId = data['bustime-response'].stops[i].stpid
