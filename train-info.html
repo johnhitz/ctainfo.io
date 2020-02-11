@@ -3,22 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title>CTA Info</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Baskervville&display=swap" rel="stylesheet">
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.js"
       integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-      crossorigin="anonymous">
+      crossorigin="anonymous" defer>
     </script>
-    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="js/busInfo.js" defer></script>
   </head>
   <body>
-    <h1>Routes</h1>
+    <div id="header"></div>
+    <h1>Hello Trains</h1>
+
+    <!-- Routes sections -->
+    <!-- <h1>Routes</h1>
     <label for="show-hide"></label>
-    <input type="button" class='show-hide button' name="" value="Show Routes">
-    <div class="routes"></div>
-    <h1>Get Stops on a Route</h1>
+    <input type="button" id='show-routes' class='show-routes' name="" value="Show Routes">
+    <div class="routes"></div> -->
+    <!-- Get Stops section -->
+    <!-- <h1>Get Stops on a Route</h1>
     <div class="stops-query">
       <div class="inputs">
         <label for="route-input">Route</label>
@@ -32,6 +38,6 @@
       </div>
       <input class="button" type="submit" name="" value="Search" id="stops">
     </div>
-    <div class="stops"></div>
+    <div class="stops"></div> -->
   </body>
 </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CTA Info</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Baskervville&display=swap" rel="stylesheet">
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous" defer>
+    </script>
+    <script type="text/javascript" src="js/busInfo.js" defer></script>
+  </head>
+  <body>
+    <!-- Add header from header.html -->
+    <div id="header"></div>
+
+
+    <!-- Routes sections -->
+    <section class="routes-section">
+      <h1>Routes</h1>
+      <label for="routes"></label>
+      <input type="button" id='routes' class='button routes' name="" value="Show Routes">
+      <div class="routes"></div>
+    </section>
+
+    <!-- Get Stops section -->
+    <h1>Get Stops on a Route</h1>
+    <div class="stops-query">
+      <div class="inputs">
+        <label for="route-input">Route</label>
+        <br>
+        <input type="text" id="route-input" name="" value="" placeholder="Enter a Route">
+      </div>
+      <div class="inputs">
+        <label for="direction-input">Direction</label>
+        <br>
+        <input type="text" id='direction-input' name="" value="" placeholder="Enter a Route">
+      </div>
+      <input class="button stops" type="submit" name="" value="Search" id="stops">
+    </div>
+    <div class="stops"></div>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+/* ======= Gobal ======= */
+* {box-sizing: border-box;}
+
+/* ======= Body ======= */
+h1 {
+  text-align: center;
+}
+
+.button {
+  height: 1.35rem;
+}
+
+/* ======= Header and Nav ======= */
+header {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+nav {
+  font-size: 2rem;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  margin-top: 2rem;
+  max-width: 30rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+a {
+  text-decoration: none;
+  background-color: rgba(0,0,0,0.2)
+}
+
+a:hover {
+  background-color: rgba(0,0,0,0.3)
+}
+
+.title {
+  font-family: 'Baskerville', serif;
+  font-style: italic;
+  line-height: .8;
+}
+
+/* ======= Routes ======= */
+/* Background color are added to cards in js for-loop */
+.routes-section input {
+  margin: 0 64%;
+}
+
+.routes {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  margin: 0 auto;
+}
+
+.stops-query {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+}
+
+.stops {
+  /* margin 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; */
+}
+
+.inputs {
+  margin: 0 3px;
+}
+
+.card {
+  margin 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 48%;
+  padding: .5rem .5rem;
+  margin: 1rem auto;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
