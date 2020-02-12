@@ -12,16 +12,18 @@
       integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
       crossorigin="anonymous" defer>
     </script>
-    <script type="text/javascript" src="js/busInfo.js" defer></script>
+    <script type="text/javascript" src="js/app.js" defer></script>
   </head>
   <body>
-    <!-- Add header from header.html -->
+
     <div class="content-container">
+      <!-- Add header from header.html -->
+      <!-- line 7 of businfo.js -->
       <div id="header"></div>
 
 
       <!-- Routes sections -->
-      <section class="routes-section">
+      <section class="routes-container">
         <h1>Routes</h1>
         <label for="routes"></label>
         <input type="button" id='routes' class='button routes' name="" value="Show Routes">
@@ -29,21 +31,23 @@
       </section>
 
       <!-- Get Stops section -->
-      <h1>Get Stops on a Route</h1>
-      <div class="stops-query">
-        <div class="inputs">
-          <label for="route-input">Route</label>
-          <br>
-          <input type="text" id="route-input" name="" value="" placeholder="Enter a Route">
+      <section class="stops-container">
+        <h1>Get Stops on a Route</h1>
+        <div class="stops-query">
+          <div class="inputs">
+            <label for="route-input">Route</label>
+            <br>
+            <input type="text" id="route-input" name="" value="" placeholder="Enter a Route">
+          </div>
+          <div class="inputs">
+            <label for="direction-input">Direction</label>
+            <br>
+            <input type="text" id='direction-input' name="" value="" placeholder="Enter a Route">
+          </div>
+          <input class="button stops" type="submit" name="" value="Search" id="stops">
         </div>
-        <div class="inputs">
-          <label for="direction-input">Direction</label>
-          <br>
-          <input type="text" id='direction-input' name="" value="" placeholder="Enter a Route">
-        </div>
-        <input class="button stops" type="submit" name="" value="Search" id="stops">
-      </div>
-      <div class="stops"></div>
+        <div class="stops"></div>
+      </section>
     </div>
   </body>
 </html>

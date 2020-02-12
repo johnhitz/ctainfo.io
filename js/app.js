@@ -17,12 +17,14 @@ $(() => {
         url: url + `${unique}?key=${key}&rt=${args}`,
         success: (data) => {
           event.preventDefault()
+          // defined length to preserve for-loop readability
           let length = data['bustime-response'].routes.length
+          // define hide button to provide hide
+          // funcionality for route data if requested
           $hideBtn = $('<input type="button" id="routes" class="button routes hide-routes" name="" value="Toggle Routes">')
           // console.log($hideBtn);
           $('#routes').after($hideBtn)
           $('#routes').remove()
-          console.log($hideBtn);
           $hideBtn.on('click', (event) => {
             event.preventDefault()
             if($('div.routes').hasClass('hidden') === false) {
@@ -36,8 +38,6 @@ $(() => {
               // in my if statement?
             }
           })
-
-
           for(let i = 0; i < length; i++) {
             const $rtnm = data['bustime-response'].routes[i].rtnm
             const $rt = data['bustime-response'].routes[i].rt
@@ -64,7 +64,6 @@ $(() => {
   // stops on the given route
   $('.stops').on('click', (event) => {
     const unique = "getstops"
-    const bustimeResponse = 'bustime-response'
     let route = $('input[id="route-input"]').val()
     let direction = $('input[id="direction-input"]').val()
     let args = `&rt=${route}&dir=${direction}&format=json`
@@ -88,13 +87,18 @@ $(() => {
             // $('.stops-query').append($div)
             // Able to change background color but not add append div with after() or append()
             // ???????????????????????????????
+            console.log(data['bustime-response'].stops[0]);
             for(let i = 0; i < length; i++) {
               const stopName = data['bustime-response'].stops[i].stpnm
               const stopId = data['bustime-response'].stops[i].stpid
+              const lat = data['bustime-response'].stops[i].lat
+              const lon = data['bustime-response'].stops[i].lon
               const $card = $(`<div class='card'>`)
               const $nameH3 = $(`<h3>Stop Name: ${stopName}</h3></div>`)
               const $idH3 = $(`<h3>Stop Id: ${stopId}</h3></div>`)
-              $card.append($nameH3).append($idH3)
+              const $latH3 = $(`<h3>Latitude: ${lat}</h3></div>`)
+              const $lonH3 = $(`<h3>Longitude: ${lon}</h3></div>`)
+              $card.append($nameH3).append($idH3).append($latH3).append($lonH3)
               $('.stops').append($card)
             }
           },
