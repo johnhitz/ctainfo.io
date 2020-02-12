@@ -3,6 +3,8 @@
 body {
   /* border: 1px solid gold; */
   text-align: center;
+  width: 100vw;
+  background-color: whitesmoke;
 }
 
 .img {
