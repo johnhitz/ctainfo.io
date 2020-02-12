@@ -63,6 +63,8 @@ $(() => {
   // [name,stop id, longitude, latitude, ...] for all
   // stops on the given route
   $('.stops').on('click', (event) => {
+    // event.preventDefault()
+    $('.card').remove()
     const unique = "getstops"
     let route = $('input[id="route-input"]').val()
     let direction = $('input[id="direction-input"]').val()
