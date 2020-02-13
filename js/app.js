@@ -21,21 +21,19 @@ $(() => {
           let length = data['bustime-response'].routes.length
           // define hide button to provide hide
           // funcionality for route data if requested
-          $hideBtn = $('<input type="button" id="routes" class="button routes hide-routes" name="" value="Toggle Routes">')
+          $hideBtn = $('<input type="button" id="routes" class="button hide-routes" name="" value="Hide Routes">')
           // console.log($hideBtn);
           $('#routes').after($hideBtn)
           $('#routes').remove()
           $hideBtn.on('click', (event) => {
             event.preventDefault()
             if($('div.routes').hasClass('hidden') === false) {
-              // Why can't I do:
-              // $hideBtn.text('Hide Button')
+              console.log("if");
+              $hideBtn.attr("value", "Show Routes")
               $('div.routes').addClass('hidden')
             } else {
+              $hideBtn.attr("value", "Hide Routes")
               $('div.routes').removeClass('hidden')
-              // and
-              // $hideBtn.text('Show Button')
-              // in my if statement?
             }
           })
           for(let i = 0; i < length; i++) {
