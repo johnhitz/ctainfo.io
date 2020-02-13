@@ -22,7 +22,9 @@ h1 {
 }
 
 .button {
-  height: 1.35rem;
+  height: 1.5em;
+  width: 7em;
+  margin: 0 auto;
 }
 
 .hidden {
@@ -114,10 +116,13 @@ h3 {
   padding: 2px 16px;
 }
 
-/* @media (min-width: 1024px) {
+@media (min-width: 1024px) {
   .button {
-    height: 2em;
-    width: 3em;
+    height: 1.5em;
+    width: 7em;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
   }
 
   .routes {
@@ -144,4 +149,4 @@ h3 {
   .hidden {
     display: none;
   }
-} */
+}
