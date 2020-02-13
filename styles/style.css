@@ -6,7 +6,7 @@ body {
   /* border: 1px solid gold; */
   text-align: center;
   width: 100vw;
-  /* background-color: whitesmoke; */
+  background-color: whitesmoke;
 }
 
 .content-container {
@@ -113,6 +113,19 @@ h3 {
 }
 
 @media (min-width: 1024px) {
+  body {
+    /* border: 1px solid gold; */
+    text-align: center;
+    width: 100vw;
+    background-color: whitesmoke;
+  }
+
+  .stops-query {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
   .button {
     height: 1.5em;
     width: 7em;
